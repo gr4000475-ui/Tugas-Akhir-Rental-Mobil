@@ -1,0 +1,15 @@
+public abstract class Mobil {
+    protected String nama;
+    protected int hargaPerHari;
+
+    public Mobil(String nama, int hargaPerHari) {
+        this.nama = nama;
+        this.hargaPerHari = hargaPerHari;
+    }
+
+    public abstract int hitungSewa(int hari, boolean pakaiSupir);
+
+    public String getNama() {
+        return nama;
+    }
+}
