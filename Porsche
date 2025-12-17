@@ -1,0 +1,15 @@
+public class Porsche extends Mobil {
+
+    public Porsche() {
+        super("Porsche", 3500000);
+    }
+
+    @Override
+    public int hitungSewa(int hari, boolean pakaiSupir) {
+        int total = hargaPerHari * hari;
+        if (pakaiSupir) {
+            total += 500000 * hari;
+        }
+        return total;
+    }
+}
