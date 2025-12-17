@@ -1,0 +1,15 @@
+public class BMW extends Mobil {
+
+    public BMW() {
+        super("BMW", 1500000);
+    }
+
+    @Override
+    public int hitungSewa(int hari, boolean pakaiSupir) {
+        int total = hargaPerHari * hari;
+        if (pakaiSupir) {
+            total += 500000 * hari;
+        }
+        return total;
+    }
+}
