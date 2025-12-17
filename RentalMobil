@@ -1,0 +1,48 @@
+ private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    
+
+    Mobil mobil = null;
+    int hari = 0;
+
+    String jenisMobil = jComboBox1.getSelectedItem().toString();
+    String lamaSewa = jComboBox2.getSelectedItem().toString();
+    String supir = jComboBox3.getSelectedItem().toString();
+
+    // Validasi
+    if (jComboBox1.getSelectedIndex() == 0 ||
+        jComboBox2.getSelectedIndex() == 0 ||
+        jComboBox3.getSelectedIndex() == 0) {
+
+        JOptionPane.showMessageDialog(this, "Silakan lengkapi semua pilihan!");
+        return;
+    }
+
+    // Pilih mobil
+    switch (jenisMobil) {
+        case "BMW" -> mobil = new BMW();
+        case "FERARRI" -> mobil = new Ferrari();
+        case "MCLAREN" -> mobil = new McLaren();
+        case "PORSCHE" -> mobil = new Porsche();
+        case "LAMBORGHINI" -> mobil = new Lamborghini();
+    }
+
+    // Lama sewa
+    switch (lamaSewa) {
+        case "1 Day" -> hari = 1;
+        case "2 Day" -> hari = 2;
+        case "3 Day" -> hari = 3;
+        case "1 week" -> hari = 7;
+    }
+
+    boolean pakaiSupir = supir.equals("Pakai Supir");
+
+    int total = mobil.hitungSewa(hari, pakaiSupir);
+
+    JOptionPane.showMessageDialog(this,
+        "Mobil       : " + mobil.getNama() +
+        "\nLama Sewa : " + hari + " hari" +
+        "\nSupir       : " + supir +
+        "\nTotal Bayar : Rp " + total
+    );
+
+    }     
