@@ -1,0 +1,15 @@
+public class McLaren extends Mobil {
+
+    public McLaren() {
+        super("McLaren", 5000000);
+    }
+
+    @Override
+    public int hitungSewa(int hari, boolean pakaiSupir) {
+        int total = hargaPerHari * hari;
+        if (pakaiSupir) {
+            total += 500000 * hari;
+        }
+        return total;
+    }
+}
